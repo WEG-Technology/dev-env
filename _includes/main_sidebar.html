@@ -1,0 +1,46 @@
+<!-- Menu -->
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a href="/" class="app-brand-link">
+                <img src="https://www.etid.org.tr/assets/uploads/service-20.png">
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">WEG</span>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+        {% for menu in site.data.navigation.menu %}
+        {% if menu.children.size > 0 %}
+        <li class="menu-item open">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx {{ menu.icon }}"></i>
+                <div data-i18n="{{ menu.name }}">{{ menu.name }}</div>
+            </a>
+
+            <ul class="menu-sub">
+                {% for child in menu.children %}
+                <li class="menu-item">
+                    <a href="{{ child.link }}" class="menu-link">
+                        <div data-i18n="{{ child.name }}">{{ child.name }}</div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% else %}
+        <li class="menu-item">
+            <a href="{{ menu.link }}" class="menu-link">
+                <i class="menu-icon tf-icons bx {{ menu.icon }}"></i>
+                <div data-i18n="{{ menu.name }}">{{ menu.name }}</div>
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</aside>
+<!-- / Menu -->

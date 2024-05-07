@@ -1,0 +1,92 @@
+---
+layout: default
+title: Homepage
+---
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/{{ page.company.config.slug }}.html">{{ page.company.config.name }}</a> / </span> {{ page.section[0] | capitalize }}</h4>
+
+    <div class="row">
+        <div class="card mb-4">
+            <h5 class="card-header">{{ page.company.config.name }}</h5>
+            <div class="text-center">
+                <img src="{{ page.company.config.logo }}" width="220"/>
+            </div>
+            <!-- Checkboxes and Radios -->
+            <div class="card-body">
+                <div class="row gy-3">
+                    <section>
+                        <p>{{ page.company.config.description }} </p>
+                    </section>
+                </div>
+            </div>
+            <hr class="m-0" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card mb-4">
+                <h5 class="card-header">Homebrew Taps</h5>
+                <!-- Checkboxes and Radios -->
+                <div class="card-body">
+                    <div class="row gy-3">
+                        <div class="col-md">
+                            {% for tap in page.section[1].homebrew_taps %}
+                            <div class="form-check mt-3">
+                                <label class="form-check-label"> {{ tap.name }} </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <hr class="m-0" />
+            </div>
+            <div class="card mb-4">
+                <h5 class="card-header">Homebrew Cask Packages</h5>
+                <!-- Checkboxes and Radios -->
+                <div class="card-body">
+                    <div class="row gy-3">
+                        <div class="col-md">
+                            {% for package in page.section[1].homebrew_packages %}
+                            <div class="form-check mt-3">
+                                <label class="form-check-label"> {{ package.name }} </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <hr class="m-0" />
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <div class="card mb-4">
+                <h5 class="card-header">Homebrew Cask Packages</h5>
+                <!-- Checkboxes and Radios -->
+                <div class="card-body">
+                    <div class="row gy-3">
+                        <div class="col-md">
+                            {% for cask_package in page.section[1].homebrew_cask_packages %}
+                            {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
+                            {% if modulo == '0' or forloop.first %}
+                            <div class="form-check mt-3">
+                                <label class="form-check-label"> {{ cask_package.name }} </label>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-md">
+                            {% for cask_package in page.section[1].homebrew_cask_packages %}
+                            {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
+                            {% if modulo == '1' %}
+                            <div class="form-check mt-3">
+                                <label class="form-check-label"> {{ cask_package.name }} </label>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <hr class="m-0" />
+            </div>
+        </div>
+    </div>
+</div>

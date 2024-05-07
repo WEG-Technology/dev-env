@@ -1,0 +1,53 @@
+---
+layout: default
+title: Homepage
+---
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">{{ page.company.config.name }}</span></h4>
+    <div class="row">
+        <div class="card mb-4">
+            <h5 class="card-header">{{ page.company.config.name }}</h5>
+            <div class="text-center">
+                <img src="{{ page.company.config.logo }}" width="220"/>
+            </div>
+            <!-- Checkboxes and Radios -->
+            <div class="card-body">
+                <div class="row gy-3">
+                    <section>
+                        <p>{{ page.company.config.description }} </p>
+                    </section>
+                </div>
+            </div>
+            <hr class="m-0" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <h5 class="card-header">Stack</h5>
+            <div class="table-responsive text-nowrap">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                    {% for stack in page.company %}
+                        {% if stack[0] != "config" %}
+                    <tr>
+                        <td>{{ stack[0] | capitalize }}</td>
+                        <td>
+                            <a href="/{{ page.company.config.slug }}-{{ stack[0] }}.html">
+                                <span class="badge bg-label-primary me-1">Show</span>
+                            </a>
+                        </td>
+                    </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

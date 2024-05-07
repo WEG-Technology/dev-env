@@ -1,0 +1,4 @@
+- name: homebrew/cask-fonts
+  selected: false
+- name: homebrew/cask-versions
+  selected: false

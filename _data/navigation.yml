@@ -1,0 +1,28 @@
+menu:
+  - id: homepage
+    name: "Homepage"
+    icon: "bx-home-circle"
+    link: "/"
+    children: []
+  - id: companies
+    name: "Companies"
+    icon: "bx-layout"
+    children:
+      - name: "Wingie Enuygun"
+        icon: ""
+        link: "/wingie-enuygun.html"
+  - id: tools
+    name: "Tools"
+    icon: "bx-dock-top"
+    link: "/tools.html"
+    children: []
+  - id: about
+    name: "About"
+    icon: "bx-support"
+    link: "/about.html"
+    children: []
+  - id: faq
+    name: "FAQ"
+    icon: "bx-file"
+    link: "/faq.html"
+    children: []
