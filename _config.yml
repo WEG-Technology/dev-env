@@ -1,22 +1,9 @@
+baseurl: "/dev-env"
 collections:
   authors:
     output: true
 
-defaults:
-  - scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+#defaults:
 
 plugins:
   - jekyll-feed
