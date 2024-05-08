@@ -1,4 +1,4 @@
-baseurl: "/dev-env"
+#baseurl: "/dev-env"
 collections:
   authors:
     output: true
