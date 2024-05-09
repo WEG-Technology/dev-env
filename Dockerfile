@@ -1,5 +1,5 @@
 # Ruby resmi imajını kullan
-FROM ruby:3.1
+FROM jekyll/builder:latest
 
 # Çalışma dizini oluştur
 WORKDIR /app
