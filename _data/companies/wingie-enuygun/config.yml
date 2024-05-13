@@ -1,5 +1,12 @@
 slug: wingie-enuygun
 name: "Wingie Enuygun"
-description: "Wingie Enuygun, ziyaretçilere uçak bileti fiyatlarını karşılaştırma imkanı sunan bir web platformudur. Kullanıcılar, dünya genelindeki çeşitli havayolları ve seyahat acentelerinin bilet fiyatlarını tek bir yerden görüntüleyebilir ve en uygun seçeneği kolayca seçebilirler."
+description: "
+               <p>Wingie Enuygun leverages cutting-edge technology to provide a seamless travel booking experience. Our platform utilizes advanced algorithms to analyze real-time data from hundreds of airlines and travel agencies, ensuring you receive the most up-to-date and competitive travel options available.</p>
+               <ul>
+               <li><strong>Advanced Algorithms:</strong> Our system uses sophisticated algorithms to quickly process and analyze extensive data sets, ensuring you get the best deals.</li>
+               <li><strong>Real-Time Data:</strong> We pull live data from multiple sources, offering you the most current prices and travel information.</li>
+               <li><strong>Fast Comparisons:</strong> Our platform is optimized for speed, allowing for quick comparisons of various travel options.</li>
+               <li><strong>Hassle-Free Booking:</strong> Designed for ease of use, our system simplifies the booking process, making it straightforward and user-friendly.</li>
+               </ul>"
 website: "https://www.wingie.com"
 logo: "/assets/img/companies/wingie-enuygun.png"

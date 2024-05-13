@@ -1,0 +1,16 @@
+company: {{ page.company.config.slug }}
+section: {{ page.section[0]  }}
+homebrew_taps:
+{% for tap in page.section[1].homebrew_taps %}
+- {{ tap.name }}
+{% endfor %}
+
+homebrew_packages:
+{% for tap in page.section[1].homebrew_packages %}
+  - {{ tap.name }}
+{% endfor %}         
+
+homebrew_cask_packages:
+{% for tap in page.section[1].homebrew_cask_packages %}
+  - {{ tap.name }}
+{% endfor %}

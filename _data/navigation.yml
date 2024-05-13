@@ -12,9 +12,9 @@ menu:
         icon: ""
         link: "/wingie-enuygun.html"
   - id: tools
-    name: "Tools"
+    name: "All Tools"
     icon: "bx-dock-top"
-    link: "/tools.html"
+    link: "/all-tools.html"
     children: []
   - id: about
     name: "About"

@@ -2,28 +2,26 @@
 layout: default
 title: Homepage
 ---
+
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">{{ page.company.config.name }}</span></h4>
+    <!-- Company Card -->
     <div class="row">
-        <div class="card mb-4">
-            <h5 class="card-header">{{ page.company.config.name }}</h5>
-            <div class="text-center">
-                <img src="{{ page.company.config.logo }}" width="220"/>
-            </div>
-            <!-- Checkboxes and Radios -->
+        <article class="card mb-4">
+            <!--<h1 class="card-header text-center">{{ page.company.config.name }}</h1>-->
+            <figure class="text-center">
+                <img src="{{ page.company.config.logo }}" alt="Company Logo" width="220"/>
+            </figure>
             <div class="card-body">
-                <div class="row gy-3">
-                    <section>
-                        <p>{{ page.company.config.description }} </p>
-                    </section>
-                </div>
+                <p>{{ page.company.config.description }}</p>
             </div>
             <hr class="m-0" />
-        </div>
+        </article>
     </div>
+
+    <!-- Technology Stack Table -->
     <div class="row">
-        <div class="card">
-            <h5 class="card-header">Stack</h5>
+        <section class="card">
+            <h2 class="card-header">Technology Stack</h2>
             <div class="table-responsive text-nowrap">
                 <table class="table">
                     <thead>
@@ -34,20 +32,20 @@ title: Homepage
                     </thead>
                     <tbody class="table-border-bottom-0">
                     {% for stack in page.company %}
-                        {% if stack[0] != "config" %}
+                    {% if stack[0] != "config" %}
                     <tr>
                         <td>{{ stack[0] | capitalize }}</td>
                         <td>
-                            <a href="/{{ page.company.config.slug }}-{{ stack[0] }}.html">
-                                <span class="badge bg-label-primary me-1">Show</span>
+                            <a href="/{{ page.company.config.slug }}-{{ stack[0] }}.html" class="badge bg-label-primary">
+                                Show
                             </a>
                         </td>
                     </tr>
-                        {% endif %}
+                    {% endif %}
                     {% endfor %}
                     </tbody>
                 </table>
             </div>
-        </div>
+        </section>
     </div>
 </div>

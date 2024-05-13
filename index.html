@@ -2,77 +2,213 @@
 layout: default
 title: Homepage
 ---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+<style>
+    .hero-image {
+        background-image: url('./assets/img/illustrations/homepage.png');
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+    }
+    .hero-text {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-55%);
+        color: white;
+        font-size: 20px;
+    }
+    .hero-text > h1 {
+        color: white;
+        font-size: 72px;
+    }
+    .slogan-section {
+        background-image: url('./assets/img/illustrations/slogan-background.png');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+    }
+    .slogan-section > h2{
+        color: white;
+    }
+    .feature-section {
+        padding: 40px 0;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin: 20px;
+    }
+    .feature-box {
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin: 10px;
+    }
+    .feature-box > h4 {
+        padding-top: 20px
+    }
+    .feature-box > img {
+        width: 200px;
+    }
+    .testimonial {
+        background-color: #ffffff;
+        border-left: 5px solid #007bff;
+        padding: 15px;
+        margin: 10px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .testimonial > img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    .container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
+    .feature {
+        width: 100%;
+        padding: 20px;
+        background-color: #fff; /* Lighter background for a clean look */
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+
+    .features-list {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .feature {
+        display: block;
+        margin-bottom: 20px; /* İsteğe bağlı özelliğin arasına boşluk ekleyebilirsiniz */
+    }
+
+
+
+    .feature:hover {
+        transform: translateY(-5px); /* Adds a subtle lift effect on hover */
+    }
+
+    .feature-icon {
+        color: #007bff; /* Bright blue for a pop of color */
+        font-size: 30px;
+        width: 50px; /* Ensures consistent sizing and alignment */
+        text-align: center;
+    }
+
+    .feature-text {
+        font-size: 16px;
+        color: #333; /* Darker text for better readability */
+        padding-left: 10px; /* Adds space between icon and text */
+    }
+
+    h3 {
+        color: #0056b3; /* Dark blue to stand out */
+        margin-bottom: 20px; /* Adds space between heading and list */
+    }
+
+    .feature-icon {
+        font-size: 24px; /* İkon boyutunu ayarlayın */
+        color: #000; /* İkon rengini belirleyin */
+    }
+
+</style>
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tools /</span> All</h4>
 
     <div class="row">
-        <div class="col-xl-4">
-            <div class="card mb-4">
-                <h5 class="card-header">Homebrew Cask Packages</h5>
-                <!-- Checkboxes and Radios -->
-                <div class="card-body">
-                    <div class="row gy-3">
-                        <div class="col-md">
-                            <small class="text-light fw-semibold">Homebrew Taps</small>
-                            {% for tap in site.data.tools.all.homebrew_taps %}
-                            <div class="form-check mt-3">
-                                <label class="form-check-label"> {{ tap.name }} </label>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <hr class="m-0" />
-            </div>
-            <div class="card mb-4">
-                <h5 class="card-header">Homebrew Cask Packages</h5>
-                <!-- Checkboxes and Radios -->
-                <div class="card-body">
-                    <div class="row gy-3">
-                        <div class="col-md">
-                            <small class="text-light fw-semibold">Homebrew Packages</small>
-                            {% for package in site.data.tools.all.homebrew_packages %}
-                            <div class="form-check mt-3">
-                                <label class="form-check-label"> {{ package.name }} </label>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <hr class="m-0" />
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Welcome to ToolHub</h1>
+                <p>One Command Away from Your Fully Set Up Computer</p>
             </div>
         </div>
-        <div class="col-xl-8">
-            <div class="card mb-4">
-                <h5 class="card-header">Homebrew Cask Packages</h5>
-                <!-- Checkboxes and Radios -->
-                <div class="card-body">
-                    <div class="row gy-3">
-                        <div class="col-md">
-                            <small class="text-light fw-semibold">Homebrew Cask Packages</small>
-                            {% for cask_package in site.data.tools.all.homebrew_cask_packages %}
-                            {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-                            {% if modulo == '0' or forloop.first %}
-                            <div class="form-check mt-3">
-                                <label class="form-check-label"> {{ cask_package.name }} </label>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                        <div class="col-md">
-                            {% for cask_package in site.data.tools.all.homebrew_cask_packages %}
-                            {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-                            {% if modulo == '1' %}
-                            <div class="form-check mt-3">
-                                <label class="form-check-label"> {{ cask_package.name }} </label>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
+
+        <div class="container mt-4">
+            <div class="row mt-4">
+
+                <div class="col-md-6">
+                    <h3>Why Choose Us?</h3>
+                    <div class="why-choose-us">
+                        <ul class="list-unstyled features-list">
+                            <li class="feature">
+                                <span class="feature-icon"><i class="fas fa-cogs"></i></span>
+                                <span class="feature-text"><strong>Modular Setup</strong> - Flexibility to set up modules like backend, frontend, and QA together or separately within a single workspace.</span>
+                            </li>
+                            <li class="feature">
+                                <span class="feature-icon"><i class="fas fa-toolbox"></i></span>
+                                <span class="feature-text"><strong>Wide Range of Tools</strong> - We support a wide range of tools across different categories to ensure you get the best setup experience possible.</span>
+                            </li>
+                            <li class="feature">
+                                <span class="feature-icon"><i class="fas fa-hourglass-half"></i></span>
+                                <span class="feature-text"><strong>Quick Installation</strong> - Swiftly install programs to get them up and running rapidly.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <hr class="m-0" />
+
+                <div class="col-md-6">
+                    <h3>Testimonials</h3>
+                    <div class="testimonial bg-light p-3 border d-flex align-items-center">
+                        <img src="https://media.licdn.com/dms/image/D4D03AQF7G2hJbxEJlA/profile-displayphoto-shrink_400_400/0/1700677024940?e=1720656000&v=beta&t=7XGFcAmOWqkeUt3GPgm22EYbfUluOe6_B5URy_7p0SE" class="rounded-circle me-3" alt="Adem Aydın">
+                        <p>"I was able to set up my entire development stack in minutes, all thanks to ToolHub. This is truly a game changer for developers!" - Erkan Özsoy</p>
+                    </div>
+                    <div class="testimonial bg-light p-3 border mt-2 d-flex align-items-center">
+                        <img src="https://media.licdn.com/dms/image/D4D03AQGg3-L2dJKgvw/profile-displayphoto-shrink_400_400/0/1706276896769?e=1720656000&v=beta&t=iW7ET8rYZxl_2BiI5BMRIaisg7WTYV04SVKYlqMtoeY" class="rounded-circle me-3" alt="Erkan Özsoy">
+                        <p>"The variety of tools available and the simplicity of the installation process makes ToolHub an indispensable part of my workflow." - Furkan Aydın</p>
+                    </div>
+                    <div class="testimonial bg-light p-3 border mt-2 d-flex align-items-center">
+                        <img src="https://media.licdn.com/dms/image/C4D03AQEviOUjUuNEvw/profile-displayphoto-shrink_400_400/0/1653231087756?e=1720656000&v=beta&t=kDWvsW3GfbRtYETIySmY8gPW0Ijtu5r_qO1URwyTd68" class="rounded-circle me-3" alt="Adem Aydın">
+                        <p>"Thanks to ToolHub, I managed to set up my entire development stack in minutes. This is truly a game changer for developers!" - Emircan Kılıç</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="container mt-4">
+            <h3 class="text-center">Usage</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <img src="./assets/img/illustrations/select.png" alt="Step 1" class="img-fluid">
+                        <h4>Step 1: Select Your Workspace</h4>
+                        <p>Access the site and choose the workspace that suits your needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <img src="./assets/img/illustrations/terminal.png" alt="Step 2" class="img-fluid">
+                        <h4>Step 2: Run It in Your Terminal</h4>
+                        <p>Execute the necessary commands in your terminal to set up the environment.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <img src="./assets/img/illustrations/usage.png" alt="Step 3" class="img-fluid">
+                        <h4>Step 3: Use Your Workspace</h4>
+                        <p>Start using your fully prepared workspace environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slogan-section">
+            <h2>Empower Your Development, Simplify Your Setup</h2>
+            <p>Join thousands of developers who streamline their environment with ToolHub!</p>
+        </div>
+
     </div>
 </div>

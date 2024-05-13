@@ -3,23 +3,22 @@ layout: default
 title: Homepage
 ---
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/{{ page.company.config.slug }}.html">{{ page.company.config.name }}</a> / </span> {{ page.section[0] | capitalize }}</h4>
+    <div class="card mb-12">
+        <div class="card-body">
+        <h1>{{ page.section[0] | capitalize }} Setup for {{ page.company.config.name }}</h1>
+        <p>The following lists detail the Homebrew taps and packages essential for setting up the {{ page.section[0] | tolower }} environment of
+            {{ page.company.config.name }}.</p>
+    </div>
+    </div>
+    <br />
 
     <div class="row">
-        <div class="card mb-4">
-            <h5 class="card-header">{{ page.company.config.name }}</h5>
-            <div class="text-center">
-                <img src="{{ page.company.config.logo }}" width="220"/>
+        <div class="col-md-12">
+            <h5>Install Command</h5>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" value="ls -al" id="commandToCopy" readonly>
+                <button class="btn btn-outline-primary" type="button" onclick="copyCommand()">Copy</button>
             </div>
-            <!-- Checkboxes and Radios -->
-            <div class="card-body">
-                <div class="row gy-3">
-                    <section>
-                        <p>{{ page.company.config.description }} </p>
-                    </section>
-                </div>
-            </div>
-            <hr class="m-0" />
         </div>
     </div>
     <div class="row">
@@ -38,7 +37,7 @@ title: Homepage
                         </div>
                     </div>
                 </div>
-                <hr class="m-0" />
+                <hr class="m-0"/>
             </div>
             <div class="card mb-4">
                 <h5 class="card-header">Homebrew Cask Packages</h5>
@@ -54,7 +53,7 @@ title: Homepage
                         </div>
                     </div>
                 </div>
-                <hr class="m-0" />
+                <hr class="m-0"/>
             </div>
         </div>
         <div class="col-xl-8">
@@ -85,8 +84,16 @@ title: Homepage
                         </div>
                     </div>
                 </div>
-                <hr class="m-0" />
+                <hr class="m-0"/>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function copyCommand() {
+        var copyText = document.getElementById("commandToCopy");
+        copyText.select();
+        document.execCommand("copy");
+    }
+</script>
