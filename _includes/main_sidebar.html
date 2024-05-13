@@ -17,7 +17,9 @@
         {% for menu in site.data.navigation.menu %}
         {% if menu.children.size > 0 %}
         <li class="menu-item open">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <!--<a href="" class="menu-link menu-toggle">-->
+
+            <a href="" class="menu-link">
                 <i class="menu-icon tf-icons bx {{ menu.icon }}"></i>
                 <div data-i18n="{{ menu.name }}">{{ menu.name }}</div>
             </a>
