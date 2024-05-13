@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: jekyll/builder:latest
 
     steps:
     - uses: actions/checkout@v4
