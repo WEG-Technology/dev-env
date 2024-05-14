@@ -9,7 +9,7 @@ title: Homepage
         <article class="card mb-4">
             <!--<h1 class="card-header text-center">{{ page.company.config.name }}</h1>-->
             <figure class="text-center">
-                <img src="{{ page.company.config.logo }}" alt="Company Logo" width="220"/>
+                <img src="{{ site.baseurl }}/{{ page.company.config.logo }}" alt="Company Logo" width="220"/>
             </figure>
             <div class="card-body">
                 <p>{{ page.company.config.description }}</p>
@@ -36,7 +36,7 @@ title: Homepage
                     <tr>
                         <td>{{ stack[0] | capitalize }}</td>
                         <td>
-                            <a href="/{{ page.company.config.slug }}-{{ stack[0] }}.html" class="badge bg-label-primary">
+                            <a href="{{ site.baseurl }}/{{ page.company.config.slug }}-{{ stack[0] }}.html" class="badge bg-label-primary">
                                 Show
                             </a>
                         </td>
