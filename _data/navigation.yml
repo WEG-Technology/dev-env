@@ -16,13 +16,13 @@ menu:
     icon: "bx-dock-top"
     link: "all-tools.html"
     children: []
-  - id: about
-    name: "About"
-    icon: "bx-support"
-    link: "about.html"
-    children: []
   - id: faq
     name: "FAQ"
     icon: "bx-file"
     link: "faq.html"
+    children: []
+  - id: about
+    name: "About"
+    icon: "bx-support"
+    link: "about.html"
     children: []
