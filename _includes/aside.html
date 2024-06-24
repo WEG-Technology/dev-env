@@ -15,17 +15,17 @@
             {% for menu in site.data.navigation.menu %}
             {% if menu.children.size > 0 %}
             <li class="nav-item">
-                <a class="nav-link text-white active bg-gradient-primary" href="{{ site.baseurl }}/">
+                <a class="{% if page.url contains menu.link %}nav-link text-white active bg-gradient-primary{% else %}nav-link text-white {% endif %}" aria-disabled="true">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
+                        <i class="material-icons opacity-10">{{ menu.icon }}</i>
                     </div>
                     <span class="nav-link-text ms-1">{{ menu.name }}</span>
                 </a>
-                <ul class="menu-sub">
+                <ul class="navbar-nav">
                     {% for child in menu.children %}
                     <li class="menu-item">
-                        <a href="{{ site.baseurl }}/{{ child.link }}" class="menu-link">
-                            <div data-i18n="{{ child.name }}">{{ child.name }}</div>
+                        <a class="{% if page.url contains child.link %}nav-link text-white active bg-gradient-primary{% else %}nav-link text-white {% endif %}" href="{{ site.baseurl }}/{{ child.link }}">
+                            <span class="nav-link-text ms-1">{{ child.name }}</span>
                         </a>
                     </li>
                     {% endfor %}
@@ -33,9 +33,9 @@
             </li>
             {% else %}
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{ site.baseurl }}/{{ menu.link }}">
+                <a class="{% if page.url contains menu.link %}nav-link text-white active bg-gradient-primary{% else %}nav-link text-white {% endif %}" href="{{ site.baseurl }}/{{ menu.link }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
+                        <i class="material-icons opacity-10">{{ menu.icon }}</i>
                     </div>
                     <span class="nav-link-text ms-1">{{ menu.name }}</span>
                 </a>
