@@ -4,8 +4,56 @@ title: FAQ
 ---
 
 
-
 <div class="container faq-section">
 
 
+
+
+</div>
+
+
+<div class="container">
+    <div class="row justify-content-center mt-3 mb-5 ">
+        <div class="col-12 col-sm-8 col-lg-6">
+            <!-- Section Heading-->
+            <div class="section_heading text-center">
+                <h3><span>Frequently </span> Asked Questions</h3>
+                <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-8">
+            <div class="accordion" id="faq-accordion">
+                {% for item in site.data.faq.items %}
+                <div class="accordion-item mb-3" data-bs-toggle="collapse" data-bs-target="#collapse-item-{{ forloop.index0 }}">
+                    <div class="card shadow-xl">
+                        <div class="card-body">
+                            <button class="accordion-button collapsed" type="button" aria-expanded="true">
+                                {{ item.title }}
+                            </button>
+                            <div id="collapse-item-{{ forloop.index0 }}" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    {{ item.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp"
+                 data-wow-delay="0.5s"
+                 style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <i class="lni-emoji-sad"></i>
+                <p class="mb-0 px-2">Can't find your answers?</p>
+                <a href="#"> Contact us</a>
+            </div>
+
+        </div>
+    </div>
 </div>
