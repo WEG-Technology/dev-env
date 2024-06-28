@@ -3,16 +3,185 @@ layout: base
 title: FAQ
 ---
 
+<style>
+    .hero-image {
+        background-image: url('./assets/img/bg-pricing.jpg') ;
+        background-size: cover;
+        background-position: bottom;
 
-<div class="container faq-section">
+        height: 300px;
+
+    }
+    .hero-text {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-55%);
+    }
+    .hero-text > h1 {
+        color: white;
+        font-size: 72px;
+    }
+    .hero-text > p {
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .slogan-section {
+        background-color: #2DC44D;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+    }
+    .slogan-section > h2{
+        color: white;
+    }
+    .feature-section {
+        padding: 40px 0;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin: 20px;
+    }
+    .feature-box {
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        margin: 10px;
+    }
+    .feature-box > h4 {
+        padding-top: 20px
+    }
+    .feature-box > img {
+        width: 200px;
+    }
+    .testimonial {
+        background-color: #ffffff;
+        border-left: 5px solid #007bff;
+        padding: 15px;
+        margin: 10px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .testimonial > img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    .container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
+    .feature {
+        width: 100%;
+        padding: 20px;
+        background-color: #fff; /* Lighter background for a clean look */
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+
+    .features-list {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .feature {
+        display: block;
+        margin-bottom: 20px; /* İsteğe bağlı özelliğin arasına boşluk ekleyebilirsiniz */
+    }
 
 
 
+    .feature:hover {
+        transform: translateY(-5px); /* Adds a subtle lift effect on hover */
+    }
 
+    .feature-icon {
+        color: #007bff; /* Bright blue for a pop of color */
+        font-size: 30px;
+        width: 50px; /* Ensures consistent sizing and alignment */
+        text-align: center;
+    }
+
+    .feature-text {
+        font-size: 16px;
+        color: #333; /* Darker text for better readability */
+        padding-left: 10px; /* Adds space between icon and text */
+    }
+
+    h3 {
+        color: #0056b3; /* Dark blue to stand out */
+        margin-bottom: 20px; /* Adds space between heading and list */
+    }
+
+    .feature-icon {
+        font-size: 24px; /* İkon boyutunu ayarlayın */
+        color: #000; /* İkon rengini belirleyin */
+    }
+
+</style>
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="row">
+        <div class="page-header min-height-300 border-radius-xl mt-4" style="">
+            <span class="mask  bg-gradient-primary  opacity-7">
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1>FAQ</h1>
+                    </div>
+                </div>
+            </span>
+        </div>
+
+        <div class="card card-body mx-3 mx-md-4 mt-n6 py-8 shadow-blur">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-lg-8">
+                    <div class="accordion" id="faq-accordion">
+                        {% for item in site.data.faq.items %}
+                        <div class="accordion-item mb-3" data-bs-toggle="collapse" data-bs-target="#collapse-item-{{ forloop.index0 }}">
+                            <div class="card shadow-xl">
+                                <div class="card-body">
+                                    <button class="accordion-button collapsed font-weight-bold" type="button" aria-expanded="true">
+                                        {{ item.title }}
+                                    </button>
+                                    <div id="collapse-item-{{ forloop.index0 }}" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            {{ item.description }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp"
+                         data-wow-delay="0.5s"
+                         style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                        <i class="lni-emoji-sad"></i>
+                        <p class="mb-0 px-2">Can't find your answers?</p>
+                        <a href="#"> Contact us</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-
-<div class="container">
+<div class="container d-none">
     <div class="row justify-content-center mt-3 mb-5 ">
         <div class="col-12 col-sm-8 col-lg-6">
             <!-- Section Heading-->

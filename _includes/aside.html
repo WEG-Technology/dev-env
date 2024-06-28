@@ -13,34 +13,35 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             {% for menu in site.data.navigation.menu %}
-            {% if menu.children.size > 0 %}
-            <li class="nav-item">
-                <a class="{% if page.url contains menu.link %}nav-link text-white active bg-gradient-primary{% else %}nav-link text-white {% endif %}" aria-disabled="true">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">{{ menu.icon }}</i>
-                    </div>
-                    <span class="nav-link-text ms-1">{{ menu.name }}</span>
-                </a>
-                <ul class="navbar-nav">
-                    {% for child in menu.children %}
-                    <li class="menu-item">
-                        <a class="{% if page.url contains child.link %}nav-link text-white active bg-gradient-primary{% else %}nav-link text-white {% endif %}" href="{{ site.baseurl }}/{{ child.link }}">
-                            <span class="nav-link-text ms-1">{{ child.name }}</span>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </li>
-            {% else %}
-            <li class="nav-item">
-                <a class="{% if page.url contains menu.link %}nav-link text-white active bg-gradient-primary{% else %}nav-link text-white {% endif %}" href="{{ site.baseurl }}/{{ menu.link }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">{{ menu.icon }}</i>
-                    </div>
-                    <span class="nav-link-text ms-1">{{ menu.name }}</span>
-                </a>
-            </li>
-            {% endif %}
+                {% if menu.children.size > 0 %}
+
+                <li class="nav-item mt-3">
+                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">{{ menu.name }}</h6>
+                </li>
+
+                        {% for child in menu.children %}
+                            <li class="nav-item child-nav-item">
+                                <a class="{% if page.url contains menu.link %}nav-link text-white active bg-gradient-primary{% else %}nav-link text-white {% endif %}" href="{{ site.baseurl }}/{{ child.link }}">
+                                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                                        <i class="material-icons opacity-10">{{ child.icon }}</i>
+                                    </div>
+                                    <span class="nav-link-text ms-1">{{ child.name }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+
+                    <hr class="mb-1">
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="{% if page.url contains menu.link %}nav-link text-white active bg-gradient-primary{% else %}nav-link text-white {% endif %}" href="{{ site.baseurl }}/{{ menu.link }}">
+                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">{{ menu.icon }}</i>
+                        </div>
+                        <span class="nav-link-text ms-1">{{ menu.name }}</span>
+                    </a>
+                </li>
+                {% endif %}
             {% endfor %}
         </ul>
     </div>
