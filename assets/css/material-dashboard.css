@@ -376,6 +376,11 @@ th {
   text-align: -webkit-match-parent;
 }
 
+.tool-icon {
+  width: 24px;
+  height: 24px;
+}
+
 thead,
 tbody,
 tfoot,
