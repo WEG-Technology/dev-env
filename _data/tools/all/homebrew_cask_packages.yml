@@ -1,42 +1,63 @@
 - name: brave-browser
+  icon: https://brave.com/static-assets/images/brave-logo-sans-text.svg
   selected: false
 - name: firefox
+  icon: https://www.mozilla.org/media/img/favicons/firefox/browser/apple-touch-icon.79c2abeb4e35.png
   selected: false
 - name: goland
+  icon: https://go.dev/blog/go-brand/Go-Logo/SVG/Go-Logo_Black.svg
   selected: false
 - name: google-chrome
+  icon: https://www.google.com/chrome/static/images/chrome-logo-m100.svg
   selected: false
 - name: google-cloud-sdk
+  icon: https://www.gstatic.com/devrel-devsite/prod/v0d244f667a3683225cca86d0ecf9b9b81b1e734e55a030bdcd3f3094b835c987/cloud/images/favicons/onecloud/favicon.ico
   selected: false
 - name: insomnia
+  icon: https://seeklogo.com/images/I/insomnia-logo-A35E09EB19-seeklogo.com.png
   selected: false
 - name: iterm2
+  icon: https://cdn.icon-icons.com/icons2/2667/PNG/512/iterm_terminal_icon_161274.png
   selected: false
 - name: jetbrains-toolbox
+  icon: https://www.jetbrains.com/favicon.ico?r=1234
   selected: false
 - name: mattermost
+  icon: https://www.mattermost.org/wp-content/uploads/2016/04/icon.png
   selected: false
 - name: mongodb-compass
+  icon: https://www.mongodb.com/assets/images/global/favicon.ico
   selected: false
 - name: notion
+  icon: https://www.notion.so/front-static/favicon.ico
   selected: false
 - name: orbstack
+  icon: https://orbstack.dev/_next/image?url=%2Fimg%2Ficon64.png&w=48&q=75
   selected: false
 - name: phpstorm
+  icon: https://resources.jetbrains.com/storage/products/phpstorm/img/meta/phpstorm_logo_300x300.png
   selected: false
 - name: postman
+  icon: https://www.postman.com/_ar-assets/images/favicon-1-48.png
   selected: false
 - name: skype
+  icon: https://secure.skypeassets.com/apollo/2.1.1806/images/icons/favicon.ico
   selected: false
 - name: spotify
+  icon: https://www.scdn.co/i/_global/favicon.png
   selected: false
 - name: sublime-text
+  icon: https://www.sublimetext.com/images/icon.png
   selected: false
 - name: switchhosts
+  icon: https://switchhosts.vercel.app/images/logo@512w.png
   selected: false
 - name: visual-studio-code
+  icon: https://code.visualstudio.com/assets/favicon.ico
   selected: false
 - name: webstorm
+  icon: https://resources.jetbrains.com/storage/products/webstorm/img/meta/webstorm_logo_300x300.png
   selected: false
 - name: whatsapp
+  icon: https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png
   selected: false

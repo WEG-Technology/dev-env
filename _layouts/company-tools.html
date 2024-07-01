@@ -2,11 +2,33 @@
 layout: base
 title: Homepage
 ---
+
+<style>
+    .command {
+        background-color: #333;
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        font-family: monospace;
+        font-size: 0.9em;
+        cursor: pointer;
+        position: relative;
+    }
+    .command:hover {
+        background-color: #444;
+    }
+    .action-message {
+        margin-top: 10px;
+        color: green;
+        display: none;
+    }
+</style>
+
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card mb-5">
         <div class="card-body">
         <h1>{{ page.section[0] | capitalize }} Setup for {{ page.company.config.name }}</h1>
-        <p>The following lists detail the Homebrew taps and packages essential for setting up the {{ page.section[0] | tolower }} environment of
+        <p class="text-xl">The following lists detail the Homebrew taps and packages essential for setting up the {{ page.section[0] | tolower }} environment of
             {{ page.company.config.name }}.</p>
     </div>
     </div>
@@ -15,84 +37,48 @@ title: Homepage
     <div class="row">
         <div class="col-md-12">
             <h5>Install Command</h5>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" value="curl -sL https://github.com/WEG-Technology/dev-env-go/releases/download/v0.0.1/development-env_darwin_arm64 -o /tmp/dev-env && chmod +x /tmp/dev-env && /tmp/dev-env -url=https://weg-technology.github.io/dev-env/wingie-enuygun-backend.yaml" id="commandToCopy" readonly>
-                <button class="btn btn-outline-primary" type="button" onclick="copyCommand()">Copy</button>
-            </div>
+            <div class="command" id="command" onclick="copyCommand()">curl -sL https://github.com/WEG-Technology/dev-env-go/releases/download/v0.0.1/development-env_darwin_arm64 -o /tmp/dev-env && chmod +x /tmp/dev-env && /tmp/dev-env -url=https://weg-technology.github.io/dev-env/wingie-enuygun-backend.yaml</div>
+            <div class="action-message" id="action-message">Command copied to clipboard!</div>
         </div>
-    </div>
     <div class="row">
         <div class="col-xl-4 py-3">
-            <div class="card shadow-xl mb-3">
+            <div>
                 <div class="card-header pb-0 p-3">
                     <h6 class="mb-0">Homebrew Taps</h6>
                 </div>
-                <div class="card-body p-3 pb-0">
-                    <ul class="list-group">
-                        {% for item in page.section[1].homebrew_taps %}
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
-                            </div>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
+                    {% for item in page.section[1].homebrew_taps %}
+                        <div class="d-flex flex-column card mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
+                            <h3 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-            <div class="card shadow-xl mb-3">
+            <div>
                 <div class="card-header pb-0 p-3">
                     <h6 class="mb-0">Homebrew Packages</h6>
                 </div>
-                <div class="card-body p-3 pb-0">
-                    <ul class="list-group">
-                        {% for item in page.section[1].homebrew_packages %}
-                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
-                            </div>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
+                    {% for item in page.section[1].homebrew_packages %}
+                        <div class="d-flex flex-column card mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
+                            <h3 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <div class="col-xl-8 py-3">
-            <div class="card shadow-xl mb-3">
+            <div class="mb-3">
                 <div class="card-header pb-0 p-3">
                     <h6 class="mb-0">Homebrew Cask Packages</h6>
                 </div>
-                <div class="card-body p-3 pb-0">
-                    <div class="row">
-                        <div class="col-md">
-                            <ul class="list-group">
-                                {% for item in page.section[1].homebrew_cask_packages %}
-                                {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-                                {% if modulo == '0' or forloop.first %}
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
-                                    </div>
-                                </li>
-                                {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="col-md">
-                            <ul class="list-group">
-                                {% for item in page.section[1].homebrew_cask_packages %}
-                                {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-                                {% if modulo == '1' or forloop.first %}
-                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
-                                    </div>
-                                </li>
-                                {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-
+                <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
+                    {% for item in page.section[1].homebrew_cask_packages %}
+                        <div class="card d-flex flex-row align-items-center mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
+                            <img style="margin-right: 0.5rem;" class="tool-icon" src="{{ item.icon }}" /> 
+                            <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                        </div>                            
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -100,9 +86,16 @@ title: Homepage
 </div>
 
 <script>
-    function copyCommand() {
-        var copyText = document.getElementById("commandToCopy");
-        copyText.select();
-        document.execCommand("copy");
+   function copyCommand() {
+        const commandText = document.getElementById('command').innerText;
+        navigator.clipboard.writeText(commandText).then(() => {
+            const actionMessage = document.getElementById('action-message');
+            actionMessage.style.display = 'block';
+            setTimeout(() => {
+                actionMessage.style.display = 'none';
+            }, 2000);
+        }).catch(err => {
+            alert('Failed to copy command: ', err);
+        });
     }
 </script>
