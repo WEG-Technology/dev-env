@@ -2,64 +2,101 @@
 layout: base
 title: All Tools
 ---
+<style>
+    .hero-image {
+        background-image: url('./assets/img/illustrations/homepage.png');
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+    }
+    .hero-text {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-55%);
+    }
+    .hero-text > h1 {
+        color: white;
+        font-size: 72px;
+    }
+    .hero-text > p {
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+</style>
 
 <div class="container">
     <div class="row">
-        <div class="col-xl-6">
-            <div>
-                <div class="card-header pb-0 p-3">
-                    <div class="row">
-                        <div class="col-6 d-flex align-items-center">
-                            <h6 class="mb-0">Homebrew Cask Packages</h6>
-                        </div>
+        <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+            <span class="mask  bg-gradient-primary  opacity-7">
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1>All Tools</h1>
                     </div>
                 </div>
-                <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
-                    {% for item in site.data.tools.all.homebrew_cask_packages %}
-                        <div class="card d-flex flex-row align-items-center mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
-                            <img style="margin-right: 0.5rem;" class="tool-icon" src="{{ item.icon }}" /> 
-                            <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
-                        </div>                            
-                    {% endfor %}
+            </span>
+        </div>
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+            <div class="row">
+            <div class="col-xl-6">
+                <div>
+                    <div class="card-header pb-0 p-3">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center">
+                                <h6 class="mb-0">Homebrew Cask Packages</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
+                        {% for item in site.data.tools.all.homebrew_cask_packages %}
+                            <div class="card d-flex flex-row align-items-center mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
+                                <img style="margin-right: 0.5rem;" class="tool-icon" src="{{ item.icon }}" /> 
+                                <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                            </div>                            
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6">
+                <div>
+                    <div class="card-header pb-0 p-3">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center">
+                                <h6 class="mb-0">Homebrew Packages</h6>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
+                        {% for item in site.data.tools.all.homebrew_packages %}
+                            <div class="d-flex flex-column card mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
+                                <h3 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div>
+                    <div class="card-header pb-0 p-3">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center">
+                                <h6 class="mb-0">Homebrew Taps</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
+                        {% for item in site.data.tools.all.homebrew_taps %}
+                            <div class="d-flex flex-column card mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
+                                <h3 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-xl-6">
-            <div>
-                <div class="card-header pb-0 p-3">
-                    <div class="row">
-                        <div class="col-6 d-flex align-items-center">
-                            <h6 class="mb-0">Homebrew Packages</h6>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
-                    {% for item in site.data.tools.all.homebrew_packages %}
-                        <div class="d-flex flex-column card mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
-                            <h3 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div>
-                <div class="card-header pb-0 p-3">
-                    <div class="row">
-                        <div class="col-6 d-flex align-items-center">
-                            <h6 class="mb-0">Homebrew Taps</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body p-3 pb-0 d-flex flex-row flex-wrap">
-                    {% for item in site.data.tools.all.homebrew_taps %}
-                        <div class="d-flex flex-column card mb-4" style="padding: 0.2rem 1rem 0.2rem 1rem; margin-right: 1rem;">
-                            <h3 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+    </div>
     </div>
 </div>
 
