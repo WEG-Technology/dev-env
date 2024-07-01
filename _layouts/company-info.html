@@ -1,12 +1,12 @@
 ---
-layout: default
+layout: base
 title: Homepage
 ---
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Company Card -->
     <div class="row">
-        <article class="card mb-4">
+        <article class="card mb-4 shadow-xl">
             <!--<h1 class="card-header text-center">{{ page.company.config.name }}</h1>-->
             <figure class="text-center">
                 <img src="{{ site.baseurl }}/{{ page.company.config.logo }}" alt="Company Logo" width="220"/>
@@ -18,34 +18,50 @@ title: Homepage
         </article>
     </div>
 
-    <!-- Technology Stack Table -->
     <div class="row">
-        <section class="card">
-            <h2 class="card-header">Technology Stack</h2>
-            <div class="table-responsive text-nowrap">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-                    {% for stack in page.company %}
-                    {% if stack[0] != "config" %}
-                    <tr>
-                        <td>{{ stack[0] | capitalize }}</td>
-                        <td>
-                            <a href="{{ site.baseurl }}/{{ page.company.config.slug }}-{{ stack[0] }}.html" class="badge bg-label-primary">
-                                Show
-                            </a>
-                        </td>
-                    </tr>
-                    {% endif %}
-                    {% endfor %}
-                    </tbody>
-                </table>
+        <div class="col-12">
+            <div class="card my-4">
+                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                        <h6 class="text-white text-center text-uppercase">TECH STACK</h6>
+                    </div>
+                </div>
+                <div class="card-body px-0 pb-2">
+                    <div class="table-responsive p-0">
+                        <table class="table align-items-center justify-content-center mb-0">
+                            <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for stack in page.company %}
+                                {% if stack[0] != "config" %}
+                                <tr>
+                                    <td>
+
+                                        <div class="d-flex px-2">
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-sm">{{ stack[0] | capitalize }}</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                            <span class="badge badge-sm bg-success text-white">
+                                                <a href="{{ site.baseurl }}/{{ page.company.config.slug }}-{{ stack[0] }}.html" class="text-white">Show</a>
+                                            </span>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+
     </div>
+
 </div>

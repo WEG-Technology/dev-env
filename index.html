@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 title: Homepage
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -16,15 +16,18 @@ title: Homepage
         position: relative;
         top: 50%;
         transform: translateY(-55%);
-        color: white;
-        font-size: 20px;
     }
     .hero-text > h1 {
         color: white;
         font-size: 72px;
     }
+    .hero-text > p {
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
     .slogan-section {
-        background-image: url('./assets/img/illustrations/slogan-background.jpeg');
+        background-color: #2DC44D;
         background-size: cover;
         background-position: center;
         color: white;
@@ -46,7 +49,6 @@ title: Homepage
         padding: 20px;
         background-color: white;
         border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         margin: 10px;
     }
     .feature-box > h4 {
@@ -126,89 +128,123 @@ title: Homepage
     }
 
 </style>
+
 <div class="container-xxl flex-grow-1 container-p-y">
 
     <div class="row">
-        <div class="hero-image">
-            <div class="hero-text">
-                <h1>Welcome to ToolHub</h1>
-                <p>One Command Away from Your Fully Set Up Computer</p>
-            </div>
-        </div>
-
-        <div class="container mt-4">
-            <div class="row mt-4">
-
-                <div class="col-md-6">
-                    <h3>Why Choose Us?</h3>
-                    <div class="why-choose-us">
-                        <ul class="list-unstyled features-list">
-                            <li class="feature">
-                                <span class="feature-icon"><i class="fas fa-cogs"></i></span>
-                                <span class="feature-text"><strong>Modular Setup</strong> - Flexibility to set up modules like backend, frontend, and QA together or separately within a single workspace.</span>
-                            </li>
-                            <li class="feature">
-                                <span class="feature-icon"><i class="fas fa-toolbox"></i></span>
-                                <span class="feature-text"><strong>Wide Range of Tools</strong> - We support a wide range of tools across different categories to ensure you get the best setup experience possible.</span>
-                            </li>
-                            <li class="feature">
-                                <span class="feature-icon"><i class="fas fa-hourglass-half"></i></span>
-                                <span class="feature-text"><strong>Quick Installation</strong> - Swiftly install programs to get them up and running rapidly.</span>
-                            </li>
-                        </ul>
+        <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+            <span class="mask  bg-gradient-primary  opacity-7">
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1>Welcome to ToolHub</h1>
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <h3>Testimonials</h3>
-                    <div class="testimonial bg-light p-3 border d-flex align-items-center">
-                        <img src="https://media.licdn.com/dms/image/D4D03AQF7G2hJbxEJlA/profile-displayphoto-shrink_400_400/0/1700677024940?e=1720656000&v=beta&t=7XGFcAmOWqkeUt3GPgm22EYbfUluOe6_B5URy_7p0SE" class="rounded-circle me-3" alt="Adem Aydın">
-                        <p>"I was able to set up my entire development stack in minutes, all thanks to ToolHub. This is truly a game changer for developers!" - Erkan Özsoy</p>
-                    </div>
-                    <div class="testimonial bg-light p-3 border mt-2 d-flex align-items-center">
-                        <img src="https://media.licdn.com/dms/image/D4D03AQGg3-L2dJKgvw/profile-displayphoto-shrink_400_400/0/1706276896769?e=1720656000&v=beta&t=iW7ET8rYZxl_2BiI5BMRIaisg7WTYV04SVKYlqMtoeY" class="rounded-circle me-3" alt="Erkan Özsoy">
-                        <p>"The variety of tools available and the simplicity of the installation process makes ToolHub an indispensable part of my workflow." - Furkan Aydın</p>
-                    </div>
-                    <div class="testimonial bg-light p-3 border mt-2 d-flex align-items-center">
-                        <img src="https://media.licdn.com/dms/image/C4D03AQEviOUjUuNEvw/profile-displayphoto-shrink_400_400/0/1653231087756?e=1720656000&v=beta&t=kDWvsW3GfbRtYETIySmY8gPW0Ijtu5r_qO1URwyTd68" class="rounded-circle me-3" alt="Adem Aydın">
-                        <p>"Thanks to ToolHub, I managed to set up my entire development stack in minutes. This is truly a game changer for developers!" - Emircan Kılıç</p>
-                    </div>
-                </div>
-            </div>
+            </span>
         </div>
 
-        <div class="container mt-4">
-            <h3 class="text-center">Usage</h3>
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+            <h3 class="text-center pt-4">One Command Away from Your Fully Set Up Computer</h3>
             <div class="row">
                 <div class="col-md-4">
                     <div class="feature-box">
-                        <img src="./assets/img/illustrations/select.png" alt="Step 1" class="img-fluid">
-                        <h4>Step 1: Select Your Workspace</h4>
-                        <p>Access the site and choose the workspace that suits your needs.</p>
+                        <i style="font-size: 72px; color: #0056b3;" class="material-icons opacity-10">looks_one</i>
+                        <h4  class="text-xl">Select Your Workspace</h4>
+                        <p class="text-md">Access the site and choose the workspace that suits your needs.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-box">
-                        <img src="./assets/img/illustrations/terminal.png" alt="Step 2" class="img-fluid">
-                        <h4>Step 2: Run It in Your Terminal</h4>
-                        <p>Execute the necessary commands in your terminal to set up the environment.</p>
+                        <i style="font-size: 72px; color: #0056b3;" class="material-icons opacity-10">looks_two</i>
+                        <h4 class="text-xl">Run It in Your Terminal</h4>
+                        <p class="text-md">Execute the necessary commands in your terminal to set up the environment.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="feature-box">
-                        <img src="./assets/img/illustrations/usage.png" alt="Step 3" class="img-fluid">
-                        <h4>Step 3: Use Your Workspace</h4>
-                        <p>Start using your fully prepared workspace environment.</p>
+                        <i style="font-size: 72px; color: #0056b3;" class="material-icons opacity-10">looks_3</i>
+                        <h4 class="text-xl">Use Your Workspace</h4>
+                        <p class="text-md">Start using your fully prepared workspace environment.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <div class="slogan-section">
+        <div class="slogan-section border-radius-xl mt-4">
             <h2>Empower Your Development, Simplify Your Setup</h2>
             <p>Join thousands of developers who streamline their environment with ToolHub!</p>
         </div>
 
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card-header pb-0 p-4">
+                        <h3 class="mb-0">Why Choose Us?</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <ul class="list-group">
+                                <li class="feature list-group-item border-0 d-flex align-items-center px-0 mb-4">
+                                    <i style="font-size: 3rem; color: #0056b3; margin-inline: 1rem;" class="fas fa-cogs"></i>
+                                    <div class="d-flex align-items-start flex-column justify-content-center" />
+                                    <h6 class="mb-0 text-lg">Modular Setup</h6>
+                                    <p class="mb-0 text-md">Flexibility to set up modules like backend, frontend, and QA together or separately within a single workspace.</p>
+                                </li>
+                                <li class="feature list-group-item border-0 d-flex align-items-center px-0 mb-4">
+                                    <i style="font-size: 3rem; color: #0056b3; margin-inline: 1rem;" class="fas fa-toolbox"></i>
+                                    <div class="d-flex align-items-start flex-column justify-content-center" />
+                                    <h6 class="mb-0 text-lg">Wide Range of Tools</h6>
+                                    <p class="mb-0 text-md">We support a wide range of tools across different categories to ensure you get the best setup experience possible.</p>
+                                </li>
+                                <li class="feature list-group-item border-0 d-flex align-items-center px-0 mb-4">
+                                    <i style="font-size: 3rem; color: #0056b3; margin-inline: 1rem;" class="fas fa-hourglass-half"></i>
+                                    <div class="d-flex align-items-start flex-column justify-content-center" />
+                                    <h6 class="mb-0 text-lg">Quick Installation</h6>
+                                    <p class="mb-0 text-md">Swiftly install programs to get them up and running rapidly</p>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="card card-plain h-100">
+                        <div class="card-header pb-0 p-4">
+                            <h3 class="mb-0">Testimonials</h3>
+                        </div>
+                        <div class="card-body p-4">
+                            <ul class="list-group">
+                            <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2 pt-0">
+                                <div style="width: 18rem; margin-right: 1rem;"">
+                                <img style="height: 8rem; width: 8rem;" class="img-fluid shadow border-radius-xl" src="https://media.licdn.com/dms/image/D4D03AQF7G2hJbxEJlA/profile-displayphoto-shrink_400_400/0/1700677024940?e=1720656000&v=beta&t=7XGFcAmOWqkeUt3GPgm22EYbfUluOe6_B5URy_7p0SE" alt="kal" class="border-radius-lg shadow">
+                                </div>
+                                <div class="d-flex align-items-start flex-column justify-content-center">
+                                <h6 class="mb-0 text-lg">Erkan Özsoy</h6>
+                                <p class="mb-0 text-md">I was able to set up my entire development stack in minutes, all thanks to ToolHub. This is truly a game changer for developers!</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                <div style="width: 18rem; margin-right: 1rem;">
+                                <img style="height: 8rem; width: 8rem;" class="img-fluid shadow border-radius-xl" src="https://media.licdn.com/dms/image/D4D03AQGg3-L2dJKgvw/profile-displayphoto-shrink_400_400/0/1706276896769?e=1720656000&v=beta&t=iW7ET8rYZxl_2BiI5BMRIaisg7WTYV04SVKYlqMtoeY" alt="kal" class="border-radius-lg shadow">
+                                </div>
+                                <div class="d-flex align-items-start flex-column justify-content-center">
+                                    <h6 class="mb-0 text-lg">Furkan Aydın</h6>
+                                    <p class="mb-0 text-md">The variety of tools available and the simplicity of the installation process makes ToolHub an indispensable part of my workflow.</p>
+                                </div>
+                            </li>
+                            <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
+                                <div style="width: 18rem; margin-right: 1rem;">
+                                    <img style="height: 8rem; width: 8rem;" class="img-fluid shadow border-radius-xl" src="https://media.licdn.com/dms/image/C4D03AQEviOUjUuNEvw/profile-displayphoto-shrink_400_400/0/1653231087756?e=1720656000&v=beta&t=kDWvsW3GfbRtYETIySmY8gPW0Ijtu5r_qO1URwyTd68" alt="kal" class="border-radius-lg shadow">
+                                </div>
+                                <div class="d-flex align-items-start flex-column justify-content-center">
+                                    <h6 class="mb-0 text-lg">Emircan Kılıç</h6>
+                                    <p class="mb-0 text-md">Thanks to ToolHub, I managed to set up my entire development stack in minutes. This is truly a game changer for developers!</p>
+                                </div>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+      
+        </div>
+    </div>
     </div>
 </div>

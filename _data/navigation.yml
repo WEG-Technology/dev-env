@@ -1,28 +1,34 @@
 menu:
-  - id: homepage
-    name: "Homepage"
-    icon: "bx-home-circle"
-    link: ""
-    children: []
+  - id: main
+    name: "Main"
+    icon: ""
+    link: "index.html"
+    children:
+      - id: homepage
+        name: "Homepage"
+        icon: "house"
+        link: "index.html"
+        children: []
+      - id: tools
+        name: "All Tools"
+        icon: "build"
+        link: "all-tools.html"
+        children: [ ]
+      - id: faq
+        name: "FAQ"
+        icon: "help"
+        link: "faq.html"
+        children: [ ]
   - id: companies
     name: "Companies"
-    icon: "bx-layout"
+    icon: "apartment"
     children:
       - name: "Wingie Enuygun"
-        icon: ""
+        icon: "apartment"
         link: "wingie-enuygun.html"
-  - id: tools
-    name: "All Tools"
-    icon: "bx-dock-top"
-    link: "all-tools.html"
-    children: []
-  - id: faq
-    name: "FAQ"
-    icon: "bx-file"
-    link: "faq.html"
-    children: []
-  - id: about
-    name: "About"
-    icon: "bx-support"
-    link: "about.html"
-    children: []
+
+#  - id: about
+#    name: "About"
+#    icon: "group"
+#    link: "about.html"
+#    children: []

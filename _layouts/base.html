@@ -1,0 +1,22 @@
+---
+layout: base
+---
+<!DOCTYPE html>
+<html lang="en">
+{% include meta_head.html %}
+
+<body>
+{% include aside.html %}
+
+
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    {% include navbar.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+</main>
+
+{% include scripts.html %}
+</body>
+</html>

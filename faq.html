@@ -1,153 +1,228 @@
 ---
-layout: default
+layout: base
 title: FAQ
 ---
 
-<div class="faq_area section_padding_130" id="faq">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-8 col-lg-6">
-                <!-- Section Heading-->
-                <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <h3><span>Frequently </span> Asked Questions</h3>
-                    <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p>
-                    <div class="line"></div>
+<style>
+    .hero-image {
+        background-image: url('./assets/img/bg-pricing.jpg') ;
+        background-size: cover;
+        background-position: bottom;
+
+        height: 300px;
+
+    }
+    .hero-text {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-55%);
+    }
+    .hero-text > h1 {
+        color: white;
+        font-size: 72px;
+    }
+    .hero-text > p {
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .slogan-section {
+        background-color: #2DC44D;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+    }
+    .slogan-section > h2{
+        color: white;
+    }
+    .feature-section {
+        padding: 40px 0;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin: 20px;
+    }
+    .feature-box {
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        margin: 10px;
+    }
+    .feature-box > h4 {
+        padding-top: 20px
+    }
+    .feature-box > img {
+        width: 200px;
+    }
+    .testimonial {
+        background-color: #ffffff;
+        border-left: 5px solid #007bff;
+        padding: 15px;
+        margin: 10px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .testimonial > img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    .container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
+    .feature {
+        width: 100%;
+        padding: 20px;
+        background-color: #fff; /* Lighter background for a clean look */
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+
+    .features-list {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .feature {
+        display: block;
+        margin-bottom: 20px; /* İsteğe bağlı özelliğin arasına boşluk ekleyebilirsiniz */
+    }
+
+
+
+    .feature:hover {
+        transform: translateY(-5px); /* Adds a subtle lift effect on hover */
+    }
+
+    .feature-icon {
+        color: #007bff; /* Bright blue for a pop of color */
+        font-size: 30px;
+        width: 50px; /* Ensures consistent sizing and alignment */
+        text-align: center;
+    }
+
+    .feature-text {
+        font-size: 16px;
+        color: #333; /* Darker text for better readability */
+        padding-left: 10px; /* Adds space between icon and text */
+    }
+
+    h3 {
+        color: #0056b3; /* Dark blue to stand out */
+        margin-bottom: 20px; /* Adds space between heading and list */
+    }
+
+    .feature-icon {
+        font-size: 24px; /* İkon boyutunu ayarlayın */
+        color: #000; /* İkon rengini belirleyin */
+    }
+
+</style>
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="row">
+        <div class="page-header min-height-300 border-radius-xl mt-4" style="">
+            <span class="mask  bg-gradient-primary  opacity-7">
+                <div class="hero-image">
+                    <div class="hero-text">
+                        <h1>FAQ</h1>
+                    </div>
                 </div>
-            </div>
+            </span>
         </div>
-        <div class="row justify-content-center">
-            <!-- FAQ Area-->
-            <div class="col-12 col-sm-10 col-lg-8">
-                <div class="accordion faq-accordian" id="faqAccordion">
-                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                        <div class="card-header" id="headingOne">
-                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">How can I install this app?<span class="lni-chevron-up"></span></h6>
-                        </div>
-                        <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
-                            <div class="card-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem facere deserunt sint animi sapiente vitae suscipit.</p>
-                                <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p>
+
+        <div class="card card-body mx-3 mx-md-4 mt-n6 py-8 shadow-blur">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-lg-8">
+                    <div class="accordion" id="faq-accordion">
+                        {% for item in site.data.faq.items %}
+                        <div class="accordion-item mb-3" data-bs-toggle="collapse" data-bs-target="#collapse-item-{{ forloop.index0 }}">
+                            <div class="card shadow-xl">
+                                <div class="card-body">
+                                    <button class="accordion-button collapsed font-weight-bold" type="button" aria-expanded="true">
+                                        {{ item.title }}
+                                    </button>
+                                    <div id="collapse-item-{{ forloop.index0 }}" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            {{ item.description }}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
+                        {% endfor %}
+
                     </div>
-                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                        <div class="card-header" id="headingTwo">
-                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">The apps isn't installing?<span class="lni-chevron-up"></span></h6>
-                        </div>
-                        <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
-                            <div class="card-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem facere deserunt sint animi sapiente vitae suscipit.</p>
-                                <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p>
-                            </div>
-                        </div>
+                    <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp"
+                         data-wow-delay="0.5s"
+                         style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                        <i class="lni-emoji-sad"></i>
+                        <p class="mb-0 px-2">Can't find your answers?</p>
+                        <a href="#"> Contact us</a>
                     </div>
-                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                        <div class="card-header" id="headingThree">
-                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Contact form isn't working?<span class="lni-chevron-up"></span></h6>
-                        </div>
-                        <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
-                            <div class="card-body">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem facere deserunt sint animi sapiente vitae suscipit.</p>
-                                <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Support Button-->
-                <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-                    <i class="lni-emoji-sad"></i>
-                    <p class="mb-0 px-2">Can't find your answers?</p>
-                    <a href="#"> Contact us</a>
+
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 
-<style type="text/css">
-    body{margin-top:20px;}
-    .section_padding_130 {
-        padding-top: 130px;
-        padding-bottom: 130px;
-    }
-    .faq_area {
-        position: relative;
-        z-index: 1;
-        background-color: #f5f5ff;
-    }
+<div class="container d-none">
+    <div class="row justify-content-center mt-3 mb-5 ">
+        <div class="col-12 col-sm-8 col-lg-6">
+            <!-- Section Heading-->
+            <div class="section_heading text-center">
+                <h3><span>Frequently </span> Asked Questions</h3>
+                <p>Appland is completely creative, lightweight, clean &amp; super responsive app landing page.</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
 
-    .faq-accordian {
-        position: relative;
-        z-index: 1;
-    }
-    .faq-accordian .card {
-        position: relative;
-        z-index: 1;
-        margin-bottom: 1.5rem;
-    }
-    .faq-accordian .card:last-child {
-        margin-bottom: 0;
-    }
-    .faq-accordian .card .card-header {
-        background-color: #ffffff;
-        padding: 0;
-        border-bottom-color: #ebebeb;
-    }
-    .faq-accordian .card .card-header h6 {
-        cursor: pointer;
-        padding: 1.75rem 2rem;
-        color: #3f43fd;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -ms-grid-row-align: center;
-        align-items: center;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-    }
-    .faq-accordian .card .card-header h6 span {
-        font-size: 1.5rem;
-    }
-    .faq-accordian .card .card-header h6.collapsed {
-        color: #070a57;
-    }
-    .faq-accordian .card .card-header h6.collapsed span {
-        -webkit-transform: rotate(-180deg);
-        transform: rotate(-180deg);
-    }
-    .faq-accordian .card .card-body {
-        padding: 1.75rem 2rem;
-    }
-    .faq-accordian .card .card-body p:last-child {
-        margin-bottom: 0;
-    }
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-8">
+            <div class="accordion" id="faq-accordion">
+                {% for item in site.data.faq.items %}
+                <div class="accordion-item mb-3" data-bs-toggle="collapse" data-bs-target="#collapse-item-{{ forloop.index0 }}">
+                    <div class="card shadow-xl">
+                        <div class="card-body">
+                            <button class="accordion-button collapsed" type="button" aria-expanded="true">
+                                {{ item.title }}
+                            </button>
+                            <div id="collapse-item-{{ forloop.index0 }}" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    {{ item.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    @media only screen and (max-width: 575px) {
-        .support-button p {
-            font-size: 14px;
-        }
-    }
+                </div>
+                {% endfor %}
 
-    .support-button i {
-        color: #3f43fd;
-        font-size: 1.25rem;
-    }
-    @media only screen and (max-width: 575px) {
-        .support-button i {
-            font-size: 1rem;
-        }
-    }
+            </div>
+            <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp"
+                 data-wow-delay="0.5s"
+                 style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <i class="lni-emoji-sad"></i>
+                <p class="mb-0 px-2">Can't find your answers?</p>
+                <a href="#"> Contact us</a>
+            </div>
 
-    .support-button a {
-        text-transform: capitalize;
-        color: #2ecc71;
-    }
-    @media only screen and (max-width: 575px) {
-        .support-button a {
-            font-size: 13px;
-        }
-    }
-</style>
+        </div>
+    </div>
+</div>

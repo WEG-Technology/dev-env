@@ -1,88 +1,113 @@
 ---
-layout: default
-title: Homepage
+layout: base
+title: All Tools
 ---
-<div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tools /</span> All</h4>
 
+<div class="container">
     <div class="row">
-        <div class="col-xl-6">
-            <div class="card mb-4">
-                <h5 class="card-header">Homebrew Cask Packages</h5>
-                <!-- Checkboxes and Radios -->
-                <div class="card-body">
-                    <div class="row gy-3">
-                        <div class="col-md">
-                            <small class="text-light fw-semibold">Homebrew Taps</small>
-                            {% for tap in site.data.tools.all.homebrew_taps %}
-                            <div class="form-check mt-3">
-                                <label class="form-check-label"> {{ tap.name }} </label>
-                            </div>
-                            {% endfor %}
+
+
+        <div class="col-xl-6 py-3">
+            <div class="card shadow-xl">
+                <div class="card-header pb-0 p-3">
+                    <div class="row">
+                        <div class="col-6 d-flex align-items-center">
+                            <h6 class="mb-0">Homebrew Cask Packages</h6>
                         </div>
                     </div>
                 </div>
-                <hr class="m-0" />
-            </div>
-            <div class="card mb-4">
-                <h5 class="card-header">Homebrew Cask Packages</h5>
-                <!-- Checkboxes and Radios -->
-                <div class="card-body">
-                    <div class="row gy-3">
-                        <div class="col-md">
-                            <small class="text-light fw-semibold">Homebrew Packages</small>
-                            {% for package in site.data.tools.all.homebrew_packages %}
-                            <div class="form-check mt-3">
-                                <label class="form-check-label"> {{ package.name }} </label>
+                <div class="card-body p-3 pb-0">
+                    <ul class="list-group">
+                        {% for item in site.data.tools.all.homebrew_cask_packages %}
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+
+                            <div class="d-flex flex-column">
+                                <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
                             </div>
-                            {% endfor %}
-                        </div>
-                    </div>
+                            
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                <hr class="m-0" />
             </div>
         </div>
-        <div class="col-xl-6">
-            <div class="card mb-4">
-                <h5 class="card-header">Homebrew Cask Packages</h5>
-                <!-- Checkboxes and Radios -->
-                <div class="card-body">
-                    <div class="row gy-3">
-                        <div class="col-md">
-                            <small class="text-light fw-semibold">Homebrew Cask Packages</small>
-                            {% for cask_package in site.data.tools.all.homebrew_cask_packages %}
-                            {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-                            {% if modulo == '0' or forloop.first %}
-                            <div class="form-check mt-3">
-                                <label class="form-check-label"> {{ cask_package.name }} </label>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
+
+        <div class="col-xl-6 py-3">
+            <div class="card shadow-xl">
+                <div class="card-header pb-0 p-3">
+                    <div class="row">
+                        <div class="col-6 d-flex align-items-center">
+                            <h6 class="mb-0">Homebrew Packages</h6>
                         </div>
+
                     </div>
                 </div>
-                <hr class="m-0" />
+                <div class="card-body p-3 pb-0">
+                    <ul class="list-group">
+                        {% for item in site.data.tools.all.homebrew_packages %}
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+
+                            <div class="d-flex flex-column">
+                                <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                            </div>
+                            
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
-            <div class="card mb-4">
-                <h5 class="card-header">Homebrew Cask Packages</h5>
-                <!-- Checkboxes and Radios -->
-                <div class="card-body">
-                    <div class="row gy-3">
-                        <div class="col-md">
-                            <small class="text-light fw-semibold">Homebrew Cask Packages</small>
-                            {% for cask_package in site.data.tools.all.homebrew_cask_packages %}
-                            {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-                            {% if modulo == '1' %}
-                            <div class="form-check mt-3">
-                                <label class="form-check-label"> {{ cask_package.name }} </label>
-                            </div>
-                            {% endif %}
-                            {% endfor %}
+        </div>
+
+
+        <div class="col-xl-6 py-3">
+            <div class="card shadow-xl">
+                <div class="card-header pb-0 p-3">
+                    <div class="row">
+                        <div class="col-6 d-flex align-items-center">
+                            <h6 class="mb-0">Homebrew Taps</h6>
                         </div>
                     </div>
                 </div>
-                <hr class="m-0" />
+                <div class="card-body p-3 pb-0">
+                    <ul class="list-group">
+                        {% for item in site.data.tools.all.homebrew_taps %}
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+
+                            <div class="d-flex flex-column">
+                                <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                            </div>
+                            
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-6 py-3">
+            <div class="card shadow-xl">
+                <div class="card-header pb-0 p-3">
+                    <div class="row">
+                        <div class="col-6 d-flex align-items-center">
+                            <h6 class="mb-0">Homebrew Taps</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body p-3 pb-0">
+                    <ul class="list-group">
+                        {% for item in site.data.tools.all.homebrew_taps %}
+                        <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+
+                            <div class="d-flex flex-column">
+                                <h6 class="mb-1 text-muted font-weight-bold text-sm">{{ item.name }}</h6>
+                            </div>
+                            
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
