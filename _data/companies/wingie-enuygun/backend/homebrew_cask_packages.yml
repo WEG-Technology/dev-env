@@ -16,6 +16,9 @@
 - name: insomnia
   icon: https://seeklogo.com/images/I/insomnia-logo-A35E09EB19-seeklogo.com.png
   selected: false
+- name: postman
+  icon: https://seeklogo.com/images/P/postman-logo-0087CA0D15-seeklogo.com.png
+  selected: false
 - name: iterm2
   icon: https://cdn.icon-icons.com/icons2/2667/PNG/512/iterm_terminal_icon_161274.png
   selected: false
@@ -37,8 +40,11 @@
 - name: phpstorm
   icon: https://resources.jetbrains.com/storage/products/phpstorm/img/meta/phpstorm_logo_300x300.png
   selected: false
-- name: postman
-  icon: https://www.postman.com/_ar-assets/images/favicon-1-48.png
+- name: pycharm
+  icon: https://resources.jetbrains.com/storage/products/pycharm/img/meta/pycharm_logo_300x300.png
+  selected: false
+- name: rubymine
+  icon: https://resources.jetbrains.com/storage/products/rubymine/img/meta/rubymine_logo_300x300.png
   selected: false
 - name: skype
   icon: https://secure.skypeassets.com/apollo/2.1.1806/images/icons/favicon.ico
@@ -57,6 +63,9 @@
   selected: false
 - name: webstorm
   icon: https://resources.jetbrains.com/storage/products/webstorm/img/meta/webstorm_logo_300x300.png
+  selected: false
+- name: python
+  icon: https://i.pinimg.com/originals/82/a2/18/82a2188c985ce75402ae44fc43fe7e5e.png
   selected: false
 - name: whatsapp
   icon: https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png

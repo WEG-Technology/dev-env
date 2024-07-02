@@ -37,7 +37,7 @@ title: Homepage
     <div class="row">
         <div class="col-md-12">
             <h5>Install Command</h5>
-            <div class="command" id="command" onclick="copyCommand()">curl -sL https://github.com/WEG-Technology/dev-env-go/releases/download/v0.0.1/development-env_darwin_arm64 -o /tmp/dev-env && chmod +x /tmp/dev-env && /tmp/dev-env -url=https://weg-technology.github.io/dev-env/wingie-enuygun-backend.yaml</div>
+            <div class="command" id="command" onclick="copyCommand()">curl -sL https://github.com/WEG-Technology/dev-env-go/releases/download/v0.0.1/development-env_darwin_arm64 -o /tmp/dev-env && chmod +x /tmp/dev-env && /tmp/dev-env -url=https://weg-technology.github.io/dev-env{{ page.url | replace: "html", "yaml" }}</div>
             <div class="action-message" id="action-message">Command copied to clipboard!</div>
         </div>
     <div class="row">

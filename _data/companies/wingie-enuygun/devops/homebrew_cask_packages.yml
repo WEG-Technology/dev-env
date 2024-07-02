@@ -4,9 +4,6 @@
 - name: firefox
   icon: https://www.mozilla.org/media/img/favicons/firefox/browser/apple-touch-icon.79c2abeb4e35.png
   selected: false
-- name: goland
-  icon: https://go.dev/blog/go-brand/Go-Logo/SVG/Go-Logo_Black.svg
-  selected: false
 - name: google-chrome
   icon: https://www.google.com/chrome/static/images/chrome-logo-m100.svg
   selected: false
@@ -16,11 +13,11 @@
 - name: insomnia
   icon: https://seeklogo.com/images/I/insomnia-logo-A35E09EB19-seeklogo.com.png
   selected: false
+- name: postman
+  icon: https://seeklogo.com/images/P/postman-logo-0087CA0D15-seeklogo.com.png
+  selected: false
 - name: iterm2
   icon: https://cdn.icon-icons.com/icons2/2667/PNG/512/iterm_terminal_icon_161274.png
-  selected: false
-- name: jetbrains-toolbox
-  icon: https://www.jetbrains.com/favicon.ico?r=1234
   selected: false
 - name: mattermost
   icon: https://www.mattermost.org/wp-content/uploads/2016/04/icon.png
@@ -33,12 +30,6 @@
   selected: false
 - name: orbstack
   icon: https://orbstack.dev/_next/image?url=%2Fimg%2Ficon64.png&w=48&q=75
-  selected: false
-- name: phpstorm
-  icon: https://resources.jetbrains.com/storage/products/phpstorm/img/meta/phpstorm_logo_300x300.png
-  selected: false
-- name: postman
-  icon: https://www.postman.com/_ar-assets/images/favicon-1-48.png
   selected: false
 - name: skype
   icon: https://secure.skypeassets.com/apollo/2.1.1806/images/icons/favicon.ico
@@ -55,9 +46,12 @@
 - name: visual-studio-code
   icon: https://code.visualstudio.com/assets/favicon.ico
   selected: false
-- name: webstorm
-  icon: https://resources.jetbrains.com/storage/products/webstorm/img/meta/webstorm_logo_300x300.png
+- name: kubectl
+  icon: https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/2109px-Kubernetes_logo_without_workmark.svg.png
   selected: false
-- name: whatsapp
-  icon: https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png
+- name: terraform
+  icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLocSQYVTny35XkhYa_P4OoDui1fPSwPaTvw&s
+  selected: false
+- name: azure-cli
+  icon: https://swimburger.net/media/0zcpmk1b/azure.jpg
   selected: false
