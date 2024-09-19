@@ -1,2 +1,1 @@
-- name: homebrew/cask-fonts
-- name: homebrew/cask-versions
+- name: homebrew/cask
