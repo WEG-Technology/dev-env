@@ -1,6 +1,6 @@
 company: {{ page.company.config.slug }}
 section: {{ page.section[0]  }}
-#homebrew_taps:
+homebrew_taps:
 #{% for tap in page.section[1].homebrew_taps %}
 #  - {{ tap.name }}
 #{% endfor %}
