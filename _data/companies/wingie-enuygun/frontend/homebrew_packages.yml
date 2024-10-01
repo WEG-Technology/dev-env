@@ -9,3 +9,5 @@
 - name: tree
 - name: vim
 - name: zsh
+- name: node
+- name: nvm
