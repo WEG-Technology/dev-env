@@ -61,9 +61,3 @@
 - name: whatsapp
   icon: https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png
   selected: false
-- name: node
-  icon: https://www.svgrepo.com/show/376337/node-js.svg
-  selected: false
-- name: nvm
-  icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd9-KQ7NFQJ5y62EJw8SMe-Ymn07hpdsSCvw&s
-  selected: false
