@@ -1,0 +1,11 @@
+- name: autoconf
+- name: bash-git-prompt
+- name: curl
+- name: helm
+- name: htop
+- name: istioctl
+- name: kubernetes-cli
+- name: tmux
+- name: tree
+- name: vim
+- name: zsh
